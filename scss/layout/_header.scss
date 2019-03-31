@@ -1,0 +1,47 @@
+// HEADER
+
+.header {
+	position: fixed;
+	top: 0;
+	z-index: 90;
+	width: 100%;
+	transition: all .5s ease;
+	&-active {
+		background: $bg-header-active;
+		box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .12), 0 1px 5px 0 rgba(0, 0, 0, .2);
+	}
+	&-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		@extend %container;
+		@include desktop($bp-sm) {
+			flex-direction: column;
+		}
+	}
+
+}
+.brand-logo {
+	padding: 14.5px 0;
+	font-size: 24px;
+	font-weight: 500;
+	color: $text-light;
+}
+.nav-toggle {
+	display: none;
+	@include desktop($bp-sm) {
+		position: absolute;
+		z-index: 90;
+		display: block;
+		align-self: flex-start;
+		margin-top: 13px;
+		margin-left: -7px;
+		padding: 5px 7px;
+		border-radius: 50%;
+		color: $text-light;
+		background-color: transparent;
+		&-icon {
+			font-size: 24px;
+		}
+	}
+}
