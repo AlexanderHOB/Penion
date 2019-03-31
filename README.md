@@ -1,8 +1,8 @@
-# PÁGINA WEB EL PENION  | NibbleFrame
-Caracteristicas Básicas
+# PÁGINA WEB EL PEÑON | NibbleFrame
+Caracteristicas
 * scrollspy
 * responsive
-* sidenav drag out
+* nav slide down
 * Messages Services
 
 ## Arquitectura Sass
@@ -55,3 +55,9 @@ Forma de organizar archivos JS
 * loading
 * code
 * mediaQueries
+
+## Placeholders vs Mixins
+* Placeholder
+![Placeholder](../md-resources/placeholder-vs-mixin-1.jpg)
+* Mixin
+![Mixin](../md-resources/placeholder-vs-mixin-2.jpg)
