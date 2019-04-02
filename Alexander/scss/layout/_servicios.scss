@@ -1,7 +1,7 @@
 // SERVICIOS
 
 .servicios {
-	height: 100vh;
+	// height: 100vh;
 	@extend %sec-p;
 	background-color: $bg-servicios;
 	&-wrapper{
@@ -9,6 +9,92 @@
 	}
 	&-title {
 		@extend %title-2;
-		color: $text-light;
+		font-family: $pacifico;
+		color: $dark;
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
 	}
+	&-icon{
+		display: inline-block;
+		margin-left: 10px;
+		background-image: url(../img/platillos/ship.png);
+		width: 80px;
+		height: 80px;
+	}
+	&-platillos{
+		display:grid;
+		grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+		grid-auto-rows:245px;
+		justify-content: center;
+		grid-auto-flow: dense;
+		margin-bottom: 30px;
+		margin-top: 30px;
+		&-horizontal{
+			grid-column: span 2;	
+		}
+		&-grande{
+			grid-column: span 2;
+			grid-row:span 2;
+		}
+		& figure{
+			position: relative;
+		}
+		& img{
+			width: 100%;
+			height: 100%;
+			border:0.5px solid #fff;
+			transition:all 0.4s ease;
+		}
+		&-subtitle{
+			width: 100%;
+			height:100%;
+			position: absolute;
+			top:0;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			color:white;
+			text-align: center;
+			background-color: rgba(0,0,0,.4);
+		}
+		& figure:hover &-subtitle{
+			display: flex;
+
+		}
+	
+	}
+	&-carta{
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		padding-bottom: 20px;
+		&-btn{
+			background-color:$blue-dark;
+			color:$light;
+			font-family: $pacifico;
+			padding: 10px;
+			border-radius: 8px;
+			box-shadow:inset 0 -.3em rgba(0,0,0,.2);
+			outline: 0;
+			transition: .3s;
+			will-change:transform;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			&:active{
+				transform: scale(0.9);
+			}
+			& span{
+				background-image: url(../img/platillos/fish-dish.png);
+				display: inline-block;
+				width: 90px;
+				height: 90px;
+				background-size: 90%;
+				background-repeat: no-repeat;
+			}
+		}
+		
+	}
+
 }

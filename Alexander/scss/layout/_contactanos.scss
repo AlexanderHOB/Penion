@@ -1,7 +1,10 @@
 // CONTACTANOS
 
 .contactanos {
-	height: 100vh;
+	position: relative;
+	overflow-x: hidden;
+	padding-bottom: 50px;
+	font-family: $pacifico;
 	@extend %sec-p;
 	background-color: $bg-contactanos;
 	&-wrapper{
@@ -11,4 +14,108 @@
 		@extend %title-2;
 		color: $text-light;
 	}
+	
+	&-form{
+		&-fish{
+			background-image:url(../img/platillos/fish.png);
+			width: 235px;
+			height: 104px;
+			margin-left: -235px;
+			position: absolute;	
+			animation: myfirst 24s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		&-group{
+			@extend %group-image;
+			&-active{
+				@extend %group-image;
+				background-image: url(../img/platillos/octo.png);
+			}
+			&-error{
+				@extend %group-image;
+				background-image: url(../img/platillos/octo-error.png);
+				color:$red;
+			}
+		}
+		& form{
+			margin: 0 auto;
+			width: 500px;
+			padding-top: 40px;
+			color: white;
+			position: relative;
+			
+			& label, & input, & textarea{
+				display: block;
+			}
+			& label{
+				font-size: 1.5em;
+				margin-top: 20px;
+				padding-left: 20px;
+			}
+			& input{
+				@extend %input-contactanos;
+				&[type="submit"]{
+					background-color:$blue-dark;
+					color: white;
+					height: 80px;
+					cursor: pointer;
+					margin-top: 30px;
+					font-size: 1.29em;
+					transition: background-color 0.5s;
+					&:hover{
+						background-color: #e58f0e;
+					
+					}
+				}
+			}
+			& textarea{
+				@extend %input-contactanos;
+				height: 100px;	
+				resize: none; 
+				overflow: auto;
+			}
+		}
+	} 
+}
+%input-contactanos{
+	width: 500px;
+	border:none;
+	border-radius: 20px;
+	outline: none;
+	padding: 10px;
+	color:$dark;
+	transition: border 0.5s;
+	border:3px solid #98d4f3;
+	&:focus{
+		border: solid 3px #77bde0;	
+	}
+}
+%group-image{
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	background-size: 10.5%;
+	transition: background-image .7s;
+	width: 566px;
+	padding-top:2px;
+}
+
+#fish{
+	top: 140px;
+}
+
+#fish2{
+	top: 260px;
+	left:-1px;
+	animation-delay: 2s;
+}
+
+/*keyframes*/
+
+/* Animation */
+@keyframes myfirst
+{
+	0% {margin-left: -235px}
+	70% {margin-left: 100%;}
+	100% {margin-left: 100%;}
 }
