@@ -589,70 +589,149 @@ a {
 .servicios {
   background-color: #ffffff; }
   .servicios-title {
-    font-family: "Pacifico";
-    color: #212121;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
     -webkit-box-align: end;
     -ms-flex-align: end;
     align-items: flex-end;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center; }
+    justify-content: center;
+    font-family: "Pacifico";
+    color: #212121; }
   .servicios-icon {
     display: inline-block;
-    margin-left: 10px;
-    background-image: url(../img/platillos/ship.png);
+    height: 80px;
     width: 80px;
-    height: 80px; }
+    margin-left: 10px;
+    background-image: url(../img/platillos/ship.png); }
   .servicios-platillos {
     display: -ms-grid;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-auto-rows: 245px;
+    -ms-grid-columns: minmax(250px, 1fr);
+    grid-template-columns: minmax(250px, 1fr);
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    grid-auto-flow: dense;
     margin-bottom: 30px;
     margin-top: 30px; }
-    .servicios-platillos-horizontal {
-      -ms-grid-column-span: 2;
-      grid-column: span 2; }
-    .servicios-platillos-grande {
-      -ms-grid-column-span: 2;
-      grid-column: span 2;
-      -ms-grid-row-span: 2;
-      grid-row: span 2; }
+    @media only screen and (min-width: 600px) {
+      .servicios-platillos {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-auto-rows: 245px;
+        grid-auto-flow: dense; }
+        .servicios-platillos-horizontal {
+          -ms-grid-column-span: 2;
+          grid-column: span 2;
+          font-size: 1.3em; }
+        .servicios-platillos-grande {
+          -ms-grid-column-span: 2;
+          grid-column: span 2;
+          -ms-grid-row-span: 2;
+          grid-row: span 2;
+          font-size: 1.6em; } }
     .servicios-platillos figure {
-      position: relative; }
-    .servicios-platillos img {
-      width: 100%;
-      height: 100%;
-      border: 0.5px solid #fff;
-      -webkit-transition: all 0.4s ease;
-      -o-transition: all 0.4s ease;
-      transition: all 0.4s ease; }
-    .servicios-platillos-subtitle {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      display: none;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.4); }
-    .servicios-platillos figure:hover .servicios-platillos-subtitle {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex; }
+      position: relative;
+      font-family: "Pacifico";
+      color: #fff;
+      background: #000; }
+      .servicios-platillos figure * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box; }
+      .servicios-platillos figure img {
+        width: 100%;
+        height: 100%;
+        border: 0.5px solid #fff;
+        opacity: 1;
+        -webkit-transition: opacity 0.4s ease;
+        -o-transition: opacity 0.4s ease;
+        transition: opacity 0.4s ease;
+        will-change: opacity; }
+      .servicios-platillos figure figcaption {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-flow: wrap column;
+        flex-flow: wrap column;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 1.5em;
+        text-align: center;
+        padding: 1em; }
+        .servicios-platillos figure figcaption::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 30px;
+          bottom: 50%;
+          left: 30px;
+          border-top: 1px solid rgba(255, 255, 255, 0.8);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+          background-color: #ffffff;
+          opacity: 0;
+          -webkit-transition: all 0.4s;
+          -o-transition: all 0.4s;
+          transition: all 0.4s;
+          -webkit-transition-delay: 0.6s;
+          -o-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+          will-change: opacity; }
+        .servicios-platillos figure figcaption h3 {
+          text-shadow: 1px 1px 0 #000;
+          word-spacing: -0.15em;
+          -webkit-transition: all 0.35s;
+          -o-transition: all 0.35s;
+          transition: all 0.35s;
+          -webkit-transition-delay: 0.3s;
+          -o-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+          -webkit-transform: translate3d(0%, 50%, 0);
+          transform: translate3d(0%, 50%, 0);
+          opacity: 0; }
+        .servicios-platillos figure figcaption p {
+          font-size: .8em;
+          font-weight: 200;
+          text-shadow: 1px 1px 0 #000;
+          -webkit-transition: all 0.35s;
+          -o-transition: all 0.35s;
+          transition: all 0.35s;
+          opacity: 0; }
+        .servicios-platillos figure figcaption a {
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          color: #fff; }
+      .servicios-platillos figure:hover img {
+        opacity: 0.81; }
+      .servicios-platillos figure:hover figcaption h3, .servicios-platillos figure:hover figcaption p {
+        -webkit-transform: translate3d(0%, 0%, 0);
+        transform: translate3d(0%, 0%, 0);
+        -webkit-transition-delay: 0.3s;
+        -o-transition-delay: 0.3s;
+        transition-delay: 0.3s;
+        opacity: 1; }
+      .servicios-platillos figure:hover figcaption:before {
+        top: 30px;
+        bottom: 30px;
+        -webkit-transition-delay: 0s;
+        -o-transition-delay: 0s;
+        transition-delay: 0s;
+        background-color: rgba(25, 118, 210, 0.05);
+        opacity: 1; }
   .servicios-carta {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -664,18 +743,6 @@ a {
     align-content: center;
     padding-bottom: 20px; }
     .servicios-carta-btn {
-      background-color: #1976d2;
-      color: #ffffff;
-      font-family: "Pacifico";
-      padding: 10px;
-      border-radius: 8px;
-      -webkit-box-shadow: inset 0 -0.3em rgba(0, 0, 0, 0.2);
-      box-shadow: inset 0 -0.3em rgba(0, 0, 0, 0.2);
-      outline: 0;
-      -webkit-transition: .3s;
-      -o-transition: .3s;
-      transition: .3s;
-      will-change: transform;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -684,18 +751,52 @@ a {
       justify-content: center;
       -webkit-box-align: center;
       -ms-flex-align: center;
-      align-items: center; }
+      align-items: center;
+      padding: 10px;
+      border-radius: 8px;
+      font-family: "Pacifico";
+      color: #ffffff;
+      -webkit-box-shadow: inset 0 -0.3em rgba(0, 0, 0, 0.2);
+      box-shadow: inset 0 -0.3em rgba(0, 0, 0, 0.2);
+      background-color: #1976d2;
+      outline: 0;
+      -webkit-transition: .3s;
+      -o-transition: .3s;
+      transition: .3s;
+      will-change: transform; }
+      .servicios-carta-btn:hover span {
+        -webkit-animation: zumbido .51s ease infinite;
+        animation: zumbido .51s ease infinite; }
       .servicios-carta-btn:active {
         -webkit-transform: scale(0.9);
         -ms-transform: scale(0.9);
         transform: scale(0.9); }
       .servicios-carta-btn span {
-        background-image: url(../img/platillos/fish-dish.png);
         display: inline-block;
         width: 90px;
         height: 90px;
         background-size: 90%;
-        background-repeat: no-repeat; }
+        background-repeat: no-repeat;
+        background-image: url(../img/platillos/fish-dish.png); }
+
+@-webkit-keyframes zumbido {
+  0%, 100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+  50% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px); } }
+
+@keyframes zumbido {
+  0%, 100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px); }
+  50% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px); } }
+
+body {
+  overflow-x: hidden; }
 
 .contactanos {
   position: relative;
@@ -706,11 +807,11 @@ a {
   .contactanos-title {
     color: #ffffff; }
   .contactanos-form-fish {
-    background-image: url(../img/platillos/fish.png);
+    position: absolute;
     width: 235px;
     height: 104px;
     margin-left: -235px;
-    position: absolute;
+    background-image: url(../img/platillos/fish.png);
     -webkit-animation: myfirst 24s;
     animation: myfirst 24s;
     -webkit-animation-iteration-count: infinite;
@@ -720,27 +821,30 @@ a {
   .contactanos-form-group-active {
     background-image: url(../img/platillos/octo.png); }
   .contactanos-form-group-error {
-    background-image: url(../img/platillos/octo-error.png);
-    color: #f44336; }
+    color: #f44336;
+    background-image: url(../img/platillos/octo-error.png); }
   .contactanos-form form {
+    position: relative;
     margin: 0 auto;
-    width: 500px;
+    width: 290px;
     padding-top: 40px;
-    color: white;
-    position: relative; }
+    color: white; }
+    @media only screen and (min-width: 576px) {
+      .contactanos-form form {
+        width: 500px; } }
     .contactanos-form form label, .contactanos-form form input, .contactanos-form form textarea {
       display: block; }
     .contactanos-form form label {
-      font-size: 1.5em;
       margin-top: 20px;
-      padding-left: 20px; }
+      padding-left: 20px;
+      font-size: 1.5em; }
     .contactanos-form form input[type="submit"] {
-      background-color: #1976d2;
-      color: white;
       height: 80px;
-      cursor: pointer;
       margin-top: 30px;
       font-size: 1.29em;
+      color: white;
+      cursor: pointer;
+      background-color: #1976d2;
       -webkit-transition: background-color 0.5s;
       -o-transition: background-color 0.5s;
       transition: background-color 0.5s; }
@@ -752,7 +856,7 @@ a {
       overflow: auto; }
 
 .contactanos-form form input, .contactanos-form form textarea {
-  width: 500px;
+  width: 250px;
   border: none;
   border-radius: 20px;
   outline: none;
@@ -762,18 +866,21 @@ a {
   -o-transition: border 0.5s;
   transition: border 0.5s;
   border: 3px solid #98d4f3; }
+  @media only screen and (min-width: 576px) {
+    .contactanos-form form input, .contactanos-form form textarea {
+      width: 500px; } }
   .contactanos-form form input:focus, .contactanos-form form textarea:focus {
     border: solid 3px #77bde0; }
 
 .contactanos-form-group, .contactanos-form-group-active, .contactanos-form-group-error {
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: 10.5%;
+  width: 566px;
+  padding-top: 2px;
   -webkit-transition: background-image .7s;
   -o-transition: background-image .7s;
   transition: background-image .7s;
-  width: 566px;
-  padding-top: 2px; }
+  background-position: right bottom;
+  background-size: 10.5%;
+  background-repeat: no-repeat; }
 
 #fish {
   top: 140px; }
@@ -788,14 +895,14 @@ a {
 /* Animation */
 @-webkit-keyframes myfirst {
   0% {
-    margin-left: -235px; }
+    margin-left: -5%; }
   70% {
     margin-left: 100%; }
   100% {
     margin-left: 100%; } }
 @keyframes myfirst {
   0% {
-    margin-left: -235px; }
+    margin-left: -5%; }
   70% {
     margin-left: 100%; }
   100% {

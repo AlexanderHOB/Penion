@@ -1,7 +1,6 @@
 // SERVICIOS
 
 .servicios {
-	// height: 100vh;
 	@extend %sec-p;
 	background-color: $bg-servicios;
 	&-wrapper{
@@ -9,60 +8,126 @@
 	}
 	&-title {
 		@extend %title-2;
-		font-family: $pacifico;
-		color: $dark;
 		display: flex;
+		flex-wrap: wrap;
 		align-items: flex-end;
 		justify-content: center;
+		font-family: $pacifico;
+		color: $dark;
 	}
 	&-icon{
 		display: inline-block;
+		height: 80px;
+		width: 80px;
 		margin-left: 10px;
 		background-image: url(../img/platillos/ship.png);
-		width: 80px;
-		height: 80px;
 	}
 	&-platillos{
+		@include mobile($bp-sm-1){
+			grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+			grid-auto-rows:245px;
+			grid-auto-flow: dense;		
+				&-horizontal{
+					grid-column: span 2;
+					font-size: 1.3em;
+				}
+				&-grande{
+					grid-column: span 2;
+					grid-row:span 2;
+					font-size: 1.6em;
+				}
+		}
 		display:grid;
-		grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
-		grid-auto-rows:245px;
+		grid-template-columns: minmax(250px,1fr);
 		justify-content: center;
-		grid-auto-flow: dense;
 		margin-bottom: 30px;
 		margin-top: 30px;
-		&-horizontal{
-			grid-column: span 2;	
-		}
-		&-grande{
-			grid-column: span 2;
-			grid-row:span 2;
-		}
 		& figure{
 			position: relative;
+			font-family: $pacifico;
+			color:#fff;
+			background: #000;
+			& *{
+				box-sizing: border-box;
+			}
+			& img{
+				width: 100%;
+				height: 100%;
+				border:0.5px solid #fff;
+				opacity: 1;
+				transition:opacity 0.4s ease;
+				will-change: opacity;
+			}
+			& figcaption{
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				flex-flow: wrap column;
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				font-size: 1.5em;
+				text-align: center;
+				padding:1em;
+				&::before{
+					content: '';
+					position: absolute;
+					top:50%;
+					right: 30px;
+					bottom: 50%;
+					left: 30px;
+					border-top: 1px solid rgba(255, 255, 255, 0.8);
+					border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+					background-color: #ffffff;
+					opacity: 0;
+					transition: all 0.4s;
+					transition-delay: 0.6s;
+					will-change: opacity;
+				}
+				& h3{
+					text-shadow: 1px 1px 0 #000;
+					word-spacing: -0.15em;
+					transition: all 0.35s;
+					transition-delay: 0.3s;
+					transform: translate3d(0%, 50%, 0);
+					opacity: 0;
+				}
+				& p{
+					font-size: .8em;
+					font-weight: 200;
+					text-shadow: 1px 1px 0 #000;
+					transition: all 0.35s;
+					opacity: 0;
+				}
+				& a{
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					color: #fff;
+				}
+			}
+			&:hover img{
+				opacity: 0.81;
+			}
+			&:hover figcaption{
+				& h3, & p{
+					transform: translate3d(0%, 0%, 0);
+					transition-delay: 0.3s;
+					opacity: 1;
+				}
+				&:before{
+					top: 30px;
+					bottom: 30px;
+					transition-delay: 0s;
+					background-color: rgba(25,118,210,0.05);
+					opacity: 1;
+				}
+			} 
 		}
-		& img{
-			width: 100%;
-			height: 100%;
-			border:0.5px solid #fff;
-			transition:all 0.4s ease;
-		}
-		&-subtitle{
-			width: 100%;
-			height:100%;
-			position: absolute;
-			top:0;
-			display: none;
-			align-items: center;
-			justify-content: center;
-			color:white;
-			text-align: center;
-			background-color: rgba(0,0,0,.4);
-		}
-		& figure:hover &-subtitle{
-			display: flex;
-
-		}
-	
+		
 	}
 	&-carta{
 		display: flex;
@@ -70,31 +135,42 @@
 		align-content: center;
 		padding-bottom: 20px;
 		&-btn{
-			background-color:$blue-dark;
-			color:$light;
-			font-family: $pacifico;
-			padding: 10px;
-			border-radius: 8px;
-			box-shadow:inset 0 -.3em rgba(0,0,0,.2);
-			outline: 0;
-			transition: .3s;
-			will-change:transform;
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			padding: 10px;
+			border-radius: 8px;
+			font-family: $pacifico;
+			color:$light;
+			box-shadow:inset 0 -.3em rgba(0,0,0,.2);
+			background-color:$blue-dark;
+			outline: 0;
+			transition: .3s;
+			will-change: transform;
+			&:hover span{
+				animation: zumbido .51s ease infinite;
+			}
 			&:active{
 				transform: scale(0.9);
 			}
 			& span{
-				background-image: url(../img/platillos/fish-dish.png);
 				display: inline-block;
 				width: 90px;
 				height: 90px;
 				background-size: 90%;
 				background-repeat: no-repeat;
+				background-image: url(../img/platillos/fish-dish.png);
 			}
 		}
 		
 	}
 
+}
+@keyframes zumbido{
+	0%,100%{
+		transform: translateX(0px)
+	}
+	50%{
+		transform: translateX(5px);
+	}
 }
