@@ -1,14 +1,264 @@
 // INICIO 
 
-.inicio {
-	height: 100vh;
-	@extend %sec-p;
-	background-color: $bg-inicio;
-	&-wrapper {
-		@extend %container;
+// Welcome
+.welcome {
+	position: relative;
+	z-index: 70;
+	height: calc(100vh + 220px);
+	&-title {
+		z-index: 74;
+		@extend %title-1;
+		padding-top: 50px;
+		text-shadow: 3px 3px #000;
+		font-family: $kalam, cursive;
+		font-weight: 700;
+		color: $text-light;
+	}
+
+	// Background
+	&-background {
+		position: absolute;
+		z-index: 71;
+		width: 100%;
+		height: 100%;
+		background-image: radial-gradient($green 50%, darken($green-dark, 10%) 100%);
+		animation: animateBackground 20s linear infinite; 
+	}
+
+	// Wave
+	&-wave {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 74;
+		width: 100%;
+	}
+
+	// Parallax
+	&-parallax {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		z-index: 73;
+		overflow: hidden;
+	}
+	&-platos {
+		height: 100%;
+	}
+	&-plato {
+		width: 100%;
+	}
+
+	// Globo
+	&-globo {
+		position: absolute;
+		z-index: 74;
+		width: 25%;
+		right: 10%;
+		top: 10%;
+		animation: animateGlobo 2s linear infinite;
+		transform: rotate(0deg) translateX(10px) rotate(0deg); 
+	}
+}
+
+@keyframes animateBackground {
+	50%{
+		filter: hue-rotate(180deg);
+	}
+}
+
+@keyframes animateGlobo {
+	to { 
+		transform: rotate(-360deg) translateX(10px) rotate(360deg); 
+	}
+}
+
+// Mejores
+.mejores {
+	&-title {
+		padding-top: 80px;
+		padding-bottom: 70px;
+		text-align: center;
+		@extend %title-2;
+		color: $text-blue;
+	}
+}
+
+// Slider
+.slider {
+	position: relative;
+	z-index: 70;
+	&-inner {
+		position: relative;
+		width: 100%;
+		height: 500px;
+		overflow: hidden;
+	}
+	&-item {
+		position: relative;
+		z-index: 72;
+		display: none;
+		width: 100%;
+		height: 100%;
+		backface-visibility: hidden;
+		perspective: 1000px;
+	}
+	&-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 60%;
+		height: 100%;
+		margin-right: auto;
+		margin-left: auto;
+		font-family: $poppins;
+		text-align: center;
+	}
+	&-img {
+		width: 400px;
+		height: 200px;
+		margin-top: -130px;
+		margin-bottom: 40px;
 	}
 	&-title {
-		@extend %title-1;
-		color: $text-light;
+		padding-bottom: 4px;
+		@extend %title-3;
+		color: $deep-orange;
+	}
+	&-text {
+		@extend %text-1;
+	}
+	&-item#{&}-active,
+	&-item-next,
+	&-item-prev {
+		display: block;
+		transition: transform .6s ease;
+	}
+	&-item-next,
+	&-item-prev {
+		position: absolute;
+		top: 0;
+	}
+	&-item-next#{&}-item-left,
+	&-item-prev#{&}-item-right {
+		transform: translate3d(0, 0, 0);
+	}
+	&-item-prev,
+	&-active#{&}-item-left {
+		transform: translate3d(-100%, 0, 0);
+	}
+	&-item-next,
+	&-active#{&}-item-right {
+		transform: translate3d(100%, 0, 0);
+	}
+
+	// Arrows
+	&-prev,
+	&-next {
+		position: absolute;
+		z-index: 73;
+		top: 0;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 10%;
+		text-decoration: none;
+		&-icon {
+			display: block;
+			color: $blue;
+			font-size: 3em;
+			opacity: .8;
+			transition: .5s;
+		}
+		&:hover &-icon {
+			opacity: 1;
+		}
+	}
+	&-prev {
+		left: 0;
+	}
+	&-next {
+		right: 0;
+	}
+
+	// Wave
+	&-wave {
+		position: absolute;
+		z-index: 71;
+		width: 100%;
+		height: 143px;
+		bottom: 0;
+		left: 0;
+		background-image: url(../img/wave2.png);
+		background-size: cover;
+		animation: animateWave 10s linear infinite;
+		&:before,
+		&:after {
+			content: '';
+			width: 100%;
+			height: 143px;
+			background-image:  url(../img/wave2.png);
+			background-size: cover;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&:before{
+			opacity: .4;
+			animation: animateWaveReverse 10s linear infinite;
+		}
+		&:after{
+			opacity: .6;
+			animation-delay: -5s;
+			animation: animateWave 20s linear infinite;
+		}
+	}
+}
+
+@keyframes animateWave{
+	0%{
+		background-position: 0;
+	}
+	100%{
+		background-position: 1360px
+	}
+}
+@keyframes animateWaveReverse{
+	0%{
+		background-position: 1360px;
+	}
+	100%{
+		background-position: 0;
+	}
+}
+
+// Slider controllers
+.controller {
+	position: absolute;
+	bottom: 5%;
+	z-index: 73;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	&-bar {
+		display: block;
+		width: 5%;
+		padding: 10px 5px;
+		margin-right: 5px;
+		margin-left: 5px;
+		text-decoration: none;
+	}
+	&-icon {
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: $light;
+		opacity: .5;
+		transition: .6s;
+	}
+	&-active &-icon {
+		opacity: 1;
 	}
 }
