@@ -1,11 +1,15 @@
 # Cambios
-Cambios globales
+Cambios realizados
 ## Generales
+Cambios globales
+### Head
 * Title
 * Ico
 * Font family kalam
 * Font family Poppins
-* header
+### Header
+* Branch-logo
+### Body
 * añadiendo parallax js
 * Tamaño de placeholder title 2
 
