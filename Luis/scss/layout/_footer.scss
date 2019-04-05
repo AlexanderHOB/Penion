@@ -1,6 +1,158 @@
 // FOOTER
 
 .footer {
-	background-color: $bg-footer;
-	height: 50vh;
+	height: 100vh;
+	background-image:$gradient-ocean-1;
+			
+	.footer-img{
+		position: absolute;
+		z-index: 10;
+		width: 100%;
+		height: 450px;
+		background-image: url( ../img/elpenionfooter.png);
+		background-position: 50% 0;
+		background-size: 100% 88%;
+		background-repeat:no-repeat;
+		background-repeat:repeat-x;
+		overflow: hidden;
+		/*border:red solid 1px;*/
+		&::BEFORE{
+			content: '';
+			top:58%;
+			position: absolute;
+			background-image:$gradient-ocean-2;
+			width: 100%;
+			height: 100%;
+			opacity: 0.7;
+			
+			
+		}
+}
+	
+	.footer-fishes{
+		position: relative;
+		height: 25%;
+		top:40%;
+		z-index:9;
+		/*border:yellow solid 1px;*/
+
+		.footer-fish-20, .footer-fish-21,.footer-fish-22,.footer-fish-23, .footer-fish-24{
+			position: absolute;
+			width:138px;
+			height: 131px;}
+		.footer-fish-20{ 
+			top:60%;
+			left: 95%;
+			background-image:url(../img/recurso20.png);
+			background-repeat: no-repeat;
+			animation: fish20 30s linear infinite;
+		}
+			@keyframes fish20 {
+				100%{
+					transform: translate(-300px);
+					opacity: 0;
+				}
+				95%{opacity: 1;}
+				}
+		.footer-fish-21{ 
+			top:15%;
+			left: 78%;
+			background-image:url(../img/recurso21.png);
+			background-repeat: no-repeat;
+			animation: fish21 30s linear infinite;
+		}
+			@keyframes fish21 {
+				100%{
+					transform: translate(-300px);
+					opacity: 0;
+				}
+				95%{opacity: 1;}
+				}
+		.footer-fish-22{ 
+			top:55%;
+			left: 10%;
+			background-image:url(../img/recurso22.png);
+			background-repeat: no-repeat;
+			animation: fish22 30s linear infinite;
+		}
+			@keyframes fish22 {
+				100%{
+					transform: translate(300px);
+					opacity: 0;
+				}
+				95%{opacity: 1;}
+				}
+		.footer-fish-23{ 
+			top:10%;
+			left: 1%;
+			background-image:url(../img/recurso23.png);
+			background-repeat: no-repeat;
+			animation: fish23 30s linear infinite;
+		}
+			@keyframes fish23 {
+				100%{
+					transform: translate(300px);
+					opacity: 0;
+				}
+				95%{opacity: 1;}
+				}
+		.footer-fish-24{ 
+			top:65%;
+			left: 60%;
+			background-image:url(../img/recurso24.png);
+			background-repeat: no-repeat;
+			animation: fish24 30s linear infinite;
+		}
+			@keyframes fish24 {
+				100%{
+					transform: translate(-300px);
+					opacity: 0;
+				}
+				95%{opacity: 1;}
+				}
+	}
+	.footer-general{
+		position: relative;
+		display:flex;
+		justify-content: center;
+		height: 30%;
+		width: 100%;
+		top:40%;
+		/*border:violet solid 1px;*/
+		font-family: $poppins;
+		color:$light;
+		
+		.footer-logo{
+			display:inline-block;
+			width: 250px;
+			height: 130px;
+			/*border: solid red  1px;*/
+			
+		}
+		.footer-info{
+			position: relative;
+			display:inline-block;
+			/*border: solid green  1px;*/
+		
+			.footer-social {
+				display: flex;
+			}
+		}
+
+		
+	}
+	.footer-copywrite{
+		position: relative;
+		display: flex;
+		justify-content: center;
+		top:40%;
+		/*height: 5%;border:solid orange 1px;*/
+		font-family: $poppins;
+		font-size: 16px;
+		color:$light;
+		a{
+			color:#01b1ea;
+		}
+	}
+	
 }
