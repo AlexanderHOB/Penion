@@ -5,12 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="author" content="NibbleFrame, nibbleframe247@gmail.com">
-	<meta name="description" content="Template - Single Page | NibbleFrame">
+	<meta name="description" content="Penion | NibbleFrame">
 	<meta name="language" content="es">
-	<title>Single Page | NibbleFrame</title>
+	<title>El Penion</title>
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<!-- DEVELOPMENT -->
 	<!-- FontAwesome -->
 	<link rel="stylesheet" href="assets/resources/fontawesome/css/all.css">
@@ -32,23 +31,34 @@
 	<!-- HEADER -->
 	<header class="header">
 		<div class="header-wrapper">
-			<div class="header-top">
-				<a href="#inicio" class="brand-logo">TU LOGO</a>
-				<button class="nav-toggle">
-					<div class="nav-toggle-line"></div>
-					<div class="nav-toggle-line"></div>
-					<div class="nav-toggle-line"></div>
-				</button>
-			</div>
-			
+			<a href="#inicio" class="brand-logo">TU LOGO</a>
+			<button class="nav-toggle waves" data-target="sidenav">
+				<i class="fas fa-stream nav-toggle-icon"></i>
+			</button>
 			<!-- NAV -->
-			<nav class="nav">
+			<nav id="sidenav" class="nav sidenav">
+				<div class="nav-header">
+					<button class="nav-header-close waves">
+						<i class="fas fa-times nav-header-icon"></i>
+					</button>
+					<div class="nav-header-bg"></div>
+					<div class="nav-header-avatar">
+						<div class="nav-header-avatar-img">
+							<!-- <img src="assets/img/logo.jpg" alt="logo"> -->
+						</div>
+						<p class="nav-header-avatar-branch">Penion</p>
+						<p class="nav-header-avatar-email"><i class="fas fa-envelope nav-header-avatar-email-icon"></i> sistemaGST@gmail.com</p>
+					</div>
+				</div>
 				<ul class="nav-content">
 					<li class="nav-item"><a href="#inicio" data-spy="#inicio" class="nav-link nav-link-active">Inicio</a></li>
 					<li class="nav-item"><a href="#nosotros" data-spy="#nosotros" class="nav-link">Nosotros</a></li>
 					<li class="nav-item"><a href="#servicios" data-spy="#servicios" class="nav-link">Servicios</a></li>
 					<li class="nav-item"><a href="#contactanos" data-spy="#contactanos" class="nav-link">Contactanos</a></li>
 				</ul>
+				<div class="nav-footer">
+					<p><i class="fas fa-pen-nib"></i> Design by <a href="https://nibbleframe.com" target="_blank" class="nav-footer-nf">NibbleFrame</a></p>
+				</div>
 			</nav>
 		</div>
 	</header>
@@ -72,69 +82,7 @@
 	<!-- SERVICIOS -->
 	<section id="servicios" class="servicios">
 		<div class="servicios-wrapper">
-			<h2 class="servicios-title">Naveguemos por los platillos <span class="servicios-icon"></span></h2>
-			<div class="servicios-platillos">
-				<figure class="servicios-platillos-grande">
-					<img src="assets/img/platillos/Festival-De-Trucha.jpg" alt="">
-					<figcaption>
-						<h3>Chicharrones <b>Peñon</b></h3>
-						<p>Deguste de la delicias de la cocina peruana</p>
-						<a href="#"></a>
-					</figcaption>
-				</figure>
-				<figure class="servicios-platillos-horizontal">
-					<img src="assets/img/platillos/2.png" alt="">
-					<figcaption>
-						<h3>Ceviches <b>Peñon</b></h3>
-						<p>Deguste de la delicias de la cocina peruana</p>
-						<a href="#"></a>
-					</figcaption>
-				</figure>
-				<figure>
-					<img src="assets/img/platillos/Arroz-Chaufa-De-La-Selva.jpg" alt="">
-					<figcaption>
-						<h3>Arroces <b>Peñon</b></h3>
-						<p>Deguste de la delicias de la cocina peruana</p>
-						<a href="#"></a>
-					</figcaption>
-				</figure>
-				<figure >
-					<img src="assets/img/platillos/Aji-De-Langostinos.jpg" alt="">
-					<figcaption>
-						<h3>Jaleas <b>Peñon</b></h3>
-						<p>Deguste de la delicias de la cocina peruana</p>
-						<a href="#"></a>
-					</figcaption>
-				</figure>
-				<figure>
-					<img src="assets/img/platillos/Entrada.png" alt="">
-					<figcaption>
-						<h3>Entradas <b>Peñon</b></h3>
-						<p>Deguste de la delicias de la cocina peruana</p>
-						<a href="#"></a>
-					</figcaption>
-				</figure>
-				<figure>
-					<img src="assets/img/platillos/Combo-4.jpg" alt="">
-					<figcaption>
-						<h3>Combos El <b>Peñon</b></h3>
-						<p>Deguste de la delicias de la cocina peruana</p>
-						<a href="#"></a>
-					</figcaption>
-				</figure>
-				<figure class="servicios-platillos-horizontal">
-					<img src="assets/img/platillos/ceviche-mixto-doncella.png" alt="">
-					<figcaption>
-							<h3>Platillos  <b>Familiares</b></h3>
-							<p>Deguste de la delicias de la cocina peruana</p>
-							<a href="#"></a>
-						</figcaption>
-				</figure>
-			</div>
-			<div class="servicios-carta">
-				<a href="http://xn--elpeon-zwa.net/menu.html" class="servicios-carta-btn"><span></span>Ver cartilla completa
-				</a>
-			</div>
+			<h2 class="servicios-title">Servicios</h2>
 		</div>
 	</section>
 
@@ -142,28 +90,6 @@
 	<section id="contactanos" class="contactanos">
 		<div class="contactanos-wrapper">
 			<h2 class="contactanos-title">Contactanos</h2>
-			<div class="contactanos-form">
-				<div class="contactanos-form-fish" id="fish"></div>
-				<div class="contactanos-form-fish" id="fish2"></div>
-				<form action="" id="contactanosForm">
-					<div class="contactanos-form-group" id="name-form">
-						<label for="name">Tu Nombre</label>
-						<input type="text" id="name" name="name" />
-					</div>
-					
-					<div class="contactanos-form-group" id="email-form">
-						<label for="email">Tu Email*</label>
-						<input type="email" id="email" name="email" />
-					</div>
-						
-					<div class="contactanos-form-group" id="message-form">
-						<label for="message">Tu Mensaje</label>
-						<textarea id="message" name="message"></textarea>
-					</div>
-						
-					<input type="submit" value="Enviar mi mensaje!" />
-				</form>
-			</div>
 		</div>
 	</section>
 
@@ -187,12 +113,6 @@
 	</div>
 
 	<!-- JAVASCRIPT -->
-	<script>
-		
-
-		
-
-	</script>
 	<script src="assets/js/material.js"></script>
 	<script src="assets/js/variables.js"></script>
 	<script src="assets/js/windowDocuemnt.js"></script>
