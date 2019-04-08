@@ -21,9 +21,6 @@
 		background-size: cover;
 		background-position: center;
 		border-radius: 50%;
-		float: left;
-		shape-outside: circle();
-		margin: 30px 30px 30px 0;
 	}
 	&-title {
 		margin-bottom: 20px;
@@ -33,18 +30,45 @@
 	&-text {
 		@extend %text-1;
 	}
+	@include desktop($bp-sm){
+		text-align: center;
+		&-img {
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 20px;
+		}
+	}
+	@include mobile($bp-sm){
+		&-img {
+			float: left;
+			shape-outside: circle();
+			margin: 30px 30px 30px 0;
+		}
+	}
 }
 
 // Misión Visión Box
 .mvBox {
 	position: relative;
 	z-index: 60;
-	height: 300px;
-	margin-top: 100px;
+	height: 500px;
+	margin-top: 50px;
 	font-family: $poppins;
 	color: $text-light;
 	overflow: hidden;
 	border-radius: 40px;
+	@include mobile($bp-xs-2) {
+		height: 400px;
+	}
+	@include mobile($bp-xs-4) {
+		height: 300px;
+	}
+	@include mobile($bp-sm) {
+		margin-top: 75px;
+	}
+	@include mobile($bp-lg) {
+		margin-top: 100px;
+	}
 	&-title {
 		position: absolute;
 		top: 50%;
@@ -89,6 +113,7 @@
 .vision {
 	z-index: 61;
 	background-image: url(../img/vision.jpg);
+	background-position: center;
 	background-size: cover;
 	&-title {
 		left: 80%;
@@ -111,6 +136,7 @@
 	transition: .5s;
 	z-index: 62;
 	background-image: url(../img/mision.jpg);
+	background-position: center;
 	background-size: cover;
 	// -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
 	// clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);

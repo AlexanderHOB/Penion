@@ -66,13 +66,28 @@
 // Titles 
 %title-3 {
 	font-weight: 500;
-	font-size: 2.5em;
+	font-size: 1.8em;
+	@include mobile($bp-xs){
+		font-size: 2em;
+	}
+	@include mobile($bp-sm){
+		font-size: 2.2em;
+	}
 }
 %title-4 {
 	font-weight: 500;
-	font-size: 2.2em;
+	font-size: 1.6em;
+	@include mobile($bp-sm){
+		font-size: 2em;
+	}
 }
 // Text
 %text-1 {
-	font-size: 1.2em;
+	font-size: 1em;
+	@include mobile($bp-xs){
+		font-size: 1.1em;
+	}
+	@include mobile($bp-sm){
+		font-size: 1.2em;
+	}
 }

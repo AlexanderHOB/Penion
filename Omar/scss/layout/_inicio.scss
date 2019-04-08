@@ -4,15 +4,42 @@
 .welcome {
 	position: relative;
 	z-index: 70;
-	height: calc(100vh + 220px);
-	&-title {
-		z-index: 74;
-		@extend %title-1;
-		padding-top: 50px;
-		text-shadow: 3px 3px #000;
-		font-family: $kalam, cursive;
-		font-weight: 700;
-		color: $text-light;
+	height: 320px;
+	@include mobile($bp-xs-2) {
+		height: 350px;
+	}
+	@include mobile($bp-xs-3) {
+		height: 380px;
+	}
+	@include mobile($bp-xs-4) {
+		height: 450px;
+	}
+	@include mobile($bp-xs) {
+		height: 500px;
+	}
+	@include mobile(660px) {
+		height: 550px;
+	}
+	@include mobile($bp-sm) {
+		height: 600px;
+	}
+	@include mobile($bp-sm-3) {
+		height: 650px;
+	}
+	@include mobile($bp-md) {
+		height: 680px;
+	}
+	@include mobile($bp-md-1) {
+		height: 720px;
+	}
+	@include mobile(1080px) {
+		height: calc(100vh + 100px);
+	}
+	@include mobile($bp-lg) {
+		height: calc(100vh + 150px);
+	}
+	@include mobile($bp-md-2) {
+		height: calc(100vh + 220px);
 	}
 
 	// Background
@@ -42,22 +69,61 @@
 		z-index: 73;
 		overflow: hidden;
 	}
+	&-title {
+		z-index: 74;
+		@extend %title-1;
+		padding-top: 70px;
+		text-shadow: 3px 3px #000;
+		font-family: $kalam, cursive;
+		font-weight: 700;
+		color: $text-light;
+		@include mobile(930px) {
+			padding-top: 60px;
+		}
+		@include mobile($bp-lg) {
+			padding-top: 50px;
+		}
+	}
 	&-platos {
 		height: 100%;
 	}
 	&-plato {
 		width: 100%;
+		@include desktop(930px) {
+			padding-top: 100px;
+		}
+		@include range(930px, $bp-lg) {
+			padding-top: 70px;
+		}
 	}
 
 	// Globo
 	&-globo {
 		position: absolute;
 		z-index: 74;
-		width: 25%;
-		right: 10%;
-		top: 10%;
+		width: 30%;
+		right: 5%;
+		top: 40%;
 		animation: animateGlobo 2s linear infinite;
-		transform: rotate(0deg) translateX(10px) rotate(0deg); 
+		transform: rotate(0deg) translateX(10px) rotate(0deg);
+		@include mobile(360px) {
+			top: 35%;
+		}
+		@include mobile($bp-xs-3) {
+			top: 30%;
+		}
+		@include mobile($bp-xs) {
+			top: 25%;
+		}
+		@include mobile($bp-sm) {
+			top: 20%;
+		}
+		@include mobile($bp-md) {
+			top: 15%;
+		}
+		@include mobile($bp-lg) {
+			width: 25%;
+		}
 	}
 }
 
@@ -76,11 +142,23 @@
 // Mejores
 .mejores {
 	&-title {
-		padding-top: 80px;
-		padding-bottom: 70px;
+		padding-top: 40px;
+		padding-bottom: 30px;
 		text-align: center;
 		@extend %title-2;
 		color: $text-blue;
+		@include mobile($bp-xs) {
+			padding-top: 50px;
+			padding-bottom: 40px;
+		}
+		@include mobile($bp-sm) {
+			padding-top: 70px;
+			padding-bottom: 60px;
+		}
+		@include mobile($bp-md) {
+			padding-top: 80px;
+			padding-bottom: 70px;
+		}    
 	}
 }
 
@@ -91,8 +169,20 @@
 	&-inner {
 		position: relative;
 		width: 100%;
-		height: 500px;
+		height: 610px;
 		overflow: hidden;
+		@include mobile($bp-xs){
+			height: 570px;
+		}
+		@include mobile($bp-sm){
+			height: 550px;
+		}
+		@include mobile($bp-md){
+			height: 520px;
+		}
+		@include mobile($bp-lg){
+			height: 500px;
+		}
 	}
 	&-item {
 		position: relative;
@@ -116,10 +206,14 @@
 		text-align: center;
 	}
 	&-img {
-		width: 400px;
-		height: 200px;
+		width: 280px;
+		height: 151px;
 		margin-top: -130px;
 		margin-bottom: 40px;
+		@include mobile($bp-xs-3) {
+			width: 372px;
+			height: 200px;
+		}
 	}
 	&-title {
 		padding-bottom: 4px;
@@ -192,7 +286,6 @@
 		bottom: 0;
 		left: 0;
 		background-image: url(../img/wave2.png);
-		background-size: cover;
 		animation: animateWave 10s linear infinite;
 		&:before,
 		&:after {
@@ -200,7 +293,6 @@
 			width: 100%;
 			height: 143px;
 			background-image:  url(../img/wave2.png);
-			background-size: cover;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -244,11 +336,23 @@
 	width: 100%;
 	&-bar {
 		display: block;
-		width: 5%;
+		width: 15%;
 		padding: 10px 5px;
 		margin-right: 5px;
 		margin-left: 5px;
 		text-decoration: none;
+		@include mobile($bp-xs-3) {
+			width: 12.5%;
+		}
+		@include mobile($bp-xs) {
+			width: 10%;
+		}
+		@include mobile($bp-sm) {
+			width: 7.5%;
+		}
+		@include mobile($bp-md) {
+			width: 5%;
+		}
 	}
 	&-icon {
 		display: block;
