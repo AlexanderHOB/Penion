@@ -77,3 +77,21 @@ $bg-contactanos: $green;
 
 // FOOTER
 $bg-footer: $dark;
+
+//GRADIENTS
+$gradient-child:linear-gradient(135deg, #09e485 0%,#0291e3 100%);
+$gradient-warm:linear-gradient(135deg, #F2CD48 0%,#FD803F 100%);
+$gradient-hot:linear-gradient(135deg, #F9445A 0%,#FD803F 100%);
+$gradient-cold:linear-gradient(135deg, #8019C6 0%,#2F93CC 100%);
+
+
+$gradient-ocean-1:linear-gradient(
+                to bottom,
+                #87D2D7,#27A7AA,#25A6AC,#1C979E,#168892,#11868F,#107B85,#107B85,
+                #127D85,#0F7077,#117279,#107178,#0D656F,#065F67,#024F59,#004F56,
+                );
+$gradient-ocean-2:linear-gradient(
+                to top,
+                #004F56,#024F59,#065F67, #0D656F,#107178,#117279,
+                #117279,#107178,#0D656F,#065F67,#024F59,#004F56,
+                );
