@@ -36,10 +36,17 @@
 		z-index:9;
 		/*border:yellow solid 1px;*/
 
-		.footer-fish-20, .footer-fish-21,.footer-fish-22,.footer-fish-23, .footer-fish-24{
+		.footer-fish-21,.footer-fish-22,.footer-fish-23, .footer-fish-24{
 			position: absolute;
 			width:138px;
-			height: 131px;}
+			height: 60px;}
+		.footer-fish-20{
+			position: absolute;
+			width:38px;
+			height: 31px;
+		}
+	
+	
 		.footer-fish-20{ 
 			top:60%;
 			left: 95%;
@@ -68,7 +75,7 @@
 				}
 				95%{opacity: 1;}
 				}
-		.footer-fish-22{ 
+		.footer-fipsh-22{ 
 			top:55%;
 			left: 10%;
 			background-image:url(../img/recurso22.png);
@@ -113,23 +120,32 @@
 	}
 	.footer-general{
 		position: relative;
-		display:flex;
-		justify-content: center;
+		display:grid;
 		height: 30%;
 		width: 100%;
 		top:40%;
-		/*border:violet solid 1px;*/
+		border:violet solid 1px;
 		font-family: $poppins;
 		color:$light;
+		padding-top: 20px;
+	
+		grid-template-columns: repeat(4,24%);
 		
+		
+		.footer-logo,.footer-copywrite, .footer-redes, .footer-reservas, .footer-horarios{
+			border:red 1px solid;
+		}
 		.footer-logo{
 			display:inline-block;
+			
+			.footer-ligo-penion{
 			width: 250px;
 			height: 130px;
-			/*border: solid red  1px;*/
+			
+			}
 			
 		}
-		.footer-info{
+		.footer-redes{	
 			position: relative;
 			display:inline-block;
 			/*border: solid green  1px;*/
