@@ -7,16 +7,19 @@
 	<meta name="author" content="NibbleFrame, nibbleframe247@gmail.com">
 	<meta name="description" content="Template - Single Page | NibbleFrame">
 	<meta name="language" content="es">
-	<title>Single Page | NibbleFrame</title>
+	<title>El Peñon | NibbleFrame</title>
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kalam:400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<!-- DEVELOPMENT -->
 	<!-- FontAwesome -->
 	<link rel="stylesheet" href="assets/resources/fontawesome/css/all.css">
 	<!-- OUR STYLES -->
 	<link rel="stylesheet" href="assets/css/styles.css" />
 	<!-- ICON -->
-	<!-- <link rel="shortcut icon" href=""> -->
+	<link rel="shortcut icon" href="assets/img/penion.ico">
 </head>
 <body>
 	<!-- LOADING -->
@@ -32,7 +35,7 @@
 	<header class="header">
 		<div class="header-wrapper">
 			<div class="header-top">
-				<a href="#inicio" class="brand-logo">TU LOGO</a>
+				<a href="#inicio" class="brand-logo"><img src="assets/img/logo-3.png" alt=""></a>
 				<button class="nav-toggle">
 					<div class="nav-toggle-line"></div>
 					<div class="nav-toggle-line"></div>
@@ -45,7 +48,7 @@
 				<ul class="nav-content">
 					<li class="nav-item"><a href="#inicio" data-spy="#inicio" class="nav-link nav-link-active">Inicio</a></li>
 					<li class="nav-item"><a href="#nosotros" data-spy="#nosotros" class="nav-link">Nosotros</a></li>
-					<li class="nav-item"><a href="#servicios" data-spy="#servicios" class="nav-link">Servicios</a></li>
+					<li class="nav-item"><a href="#platillos" data-spy="#platillos" class="nav-link">Platillos</a></li>
 					<li class="nav-item"><a href="#contactanos" data-spy="#contactanos" class="nav-link">Contactanos</a></li>
 				</ul>
 			</nav>
@@ -56,22 +59,169 @@
 
 	<!-- INICIO -->
 	<section id="inicio" class="inicio">
-		<div class="inicio-wrapper">
-			<h1 class="inicio-title">Inicio</h1>
+		<div class="welcome">
+			<div class="welcome-background">
+			</div>
+			<div class="welcome-parallax">
+				<ul class="welcome-platos">
+					<li class="layer" data-depth=".15"><h1 class="welcome-title">EL PEÑON</h1></li>
+					<li class="layer welcome-plato" data-depth=".3"><img src="assets/img/plato22.png" alt="plato 2"></li>
+					<li class="layer welcome-plato" data-depth="-.2"><img src="assets/img/plato21.png" alt="plato 1"></li>
+					<li class="layer welcome-plato" data-depth=".6"><img src="assets/img/plato23.png" alt="plato 3"></li>
+					<li class="layer welcome-plato" data-depth="-.8"><img src="assets/img/plato24.png" alt="plato 3"></li>
+				</ul>
+				<div class="welcome-globo">
+					<img src="assets/img/globo.png" alt="globo">
+				</div>
+			</div>
+			<img src="assets/img/wave.png" class="welcome-wave" alt="">
 		</div>
+
+		<!-- Mejores Platos -->
+		<div class="mejores">
+			<h2 class="mejores-title">Nuestros Mejores Platos</h2>
+			<div class="slider">
+				<div class="slider-inner">
+					<div class="slider-item slider-active">
+						<div class="slider-content">
+							<div class="slider-img">
+								<img src="assets/img/mejor-plat11.png" alt="mejor plato 1">
+							</div>
+							<h3 class="slider-title">Causa de 3 sabores</h3>
+							<p class="slider-text">Es una entrada rápida que muestra la variedad de sabores que podemos experimentar en un solo plato.</p>
+						</div>
+					</div>
+					<div class="slider-item">
+						<div class="slider-content">
+							<div class="slider-img">
+								<img src="assets/img/mejor-plat12.png" alt="mejor plato 2">
+							</div>
+							<h3 class="slider-title">Arroz chaufa de la selva</h3>
+							<p class="slider-text">Combinamos la cocina criolla con los insumos de nuestra región creamos un plato que permite apreciar la fusión criollo - amazónico.</p>
+						</div>
+					</div>
+					<div class="slider-item">
+						<div class="slider-content">
+							<div class="slider-img">
+								<img src="assets/img/mejor-plat13.png" alt="mejor plato 3">
+							</div>
+							<h3 class="slider-title">Festival de trucha</h3>
+							<p class="slider-text">Utilizando su delicioso sabor incorporamos a nuestra receta para sumar a la variedad de preparaciones que ofrecemos mostrando la versatilidad de este insumo.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="slider-wave"></div>
+				<!-- Controllers -->
+				<a href="javascript:void(0)" class="slider-prev"><i class="fas fa-angle-left slider-prev-icon"></i></a>
+				<a href="javascript:void(0)" class="slider-next"><i class="fas fa-angle-right slider-next-icon"></i></a>
+				<div class="controller"></div>
+			</div>
+		</div>
+
 	</section>
 
 	<!-- NOSOTROS -->
 	<section id="nosotros" class="nosotros">
 		<div class="nosotros-wrapper">
 			<h2 class="nosotros-title">Nosotros</h2>
+
+			<!-- Quienes Somos -->
+			<div class="quienesSomos">
+				<div class="quienesSomos-img"></div>
+				<h2 class="quienesSomos-title">¿Quiénes Somos?</h2>
+				<p class="quienesSomos-text">En 1993 se concibió la idea de hacer en Pucallpa un restaurante, el 20 de marzo de ese año abrió sus puertas Restaurant, Cevicheria Y Picantería El Peñón E.I.R.L. Que poco a poco fue conquistando los paladares de nuestra gente, El Peñón. marcó el rumbo de la buena gastronomía desde esa época. Nuestros comensal y visitantes son acogidos por nuestro personal formado profesionalmente en calidad de atención al cliente, en un local cálido, en sus ambientes, que permiten gran versatilidad, y facilitan la atención simultánea de reservas privadas de instituciones, celebraciones familiares y afines. Nuestros clientes son siempre atendidos con productos y servicios diseñados para satisfacer sus más altas exigencias.</p>
+			</div>
+
+			<!-- Mision - Vision -->
+			<div class="mvBox">
+
+				<!-- Vision -->
+				<div class="vision">
+					<h3 class="mvBox-title vision-title">Visión</h3>
+					<div class="mvBox-content vision-content">
+						<h4 class="mvBox-content-title">Visión</h4>
+						<p class="mvBox-content-text">En Restaurant, Cevicheria Y Picantería El Peñón E.I.R.L. Queremos conquistar el mercado nacional, restaurando y dando a conocer la calidad de nuestra gastronomía, nuestro excelente servicio y ambiente único: un verdadero placer para los sentidos.</p>
+					</div>
+				</div>
+
+				<!-- Mision -->
+				<div class="mision">
+					<h3 class="mvBox-title mision-title">Misión</h3>
+					<div class="mvBox-content mision-content">
+						<h4 class="mvBox-content-title">Misión</h4>
+						<p class="mvBox-content-text">Actualmente, El Peñón es una empresa restauradora que ofrece una gastronomía variada en su carta de comida y bebidas de la cocina nacional, especializada en pescados y mariscos, bebidas originales con productos de óptima calidad y un servicio de excelencia, en un ambiente cálido y acogedor.</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</section>
 
-	<!-- SERVICIOS -->
-	<section id="servicios" class="servicios">
-		<div class="servicios-wrapper">
-			<h2 class="servicios-title">Servicios</h2>
+	<!-- PLATILLOS -->
+	<section id="platillos" class="platillos">
+		<div class="platillos-wrapper">
+			<h2 class="platillos-title">Naveguemos por los platillos <span class="platillos-icon"></span></h2>
+			<div class="platillos-platillos">
+				<figure class="platillos-platillos-grande">
+					<img src="assets/img/platillos/Festival-De-Trucha.jpg" alt="">
+					<figcaption>
+						<h3>Chicharrones <b>Peñon</b></h3>
+						<p>Deguste de la delicias de la cocina peruana</p>
+						<a href="javascript:void(0)"></a>
+					</figcaption>
+				</figure>
+				<figure class="platillos-platillos-horizontal">
+					<img src="assets/img/platillos/2.png" alt="">
+					<figcaption>
+						<h3>Ceviches <b>Peñon</b></h3>
+						<p>Deguste de la delicias de la cocina peruana</p>
+						<a href="javascript:void(0)"></a>
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="assets/img/platillos/Arroz-Chaufa-De-La-Selva.jpg" alt="">
+					<figcaption>
+						<h3>Arroces <b>Peñon</b></h3>
+						<p>Deguste de la delicias de la cocina peruana</p>
+						<a href="javascript:void(0)"></a>
+					</figcaption>
+				</figure>
+				<figure >
+					<img src="assets/img/platillos/Aji-De-Langostinos.jpg" alt="">
+					<figcaption>
+						<h3>Jaleas <b>Peñon</b></h3>
+						<p>Deguste de la delicias de la cocina peruana</p>
+						<a href="javascript:void(0)"></a>
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="assets/img/platillos/Entrada.png" alt="">
+					<figcaption>
+						<h3>Entradas <b>Peñon</b></h3>
+						<p>Deguste de la delicias de la cocina peruana</p>
+						<a href="javascript:void(0)"></a>
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="assets/img/platillos/Combo-4.jpg" alt="">
+					<figcaption>
+						<h3>Combos El <b>Peñon</b></h3>
+						<p>Deguste de la delicias de la cocina peruana</p>
+						<a href="javascript:void(0)"></a>
+					</figcaption>
+				</figure>
+				<figure class="platillos-platillos-horizontal">
+					<img src="assets/img/platillos/ceviche-mixto-doncella.png" alt="">
+					<figcaption>
+						<h3>Platillos  <b>Familiares</b></h3>
+						<p>Deguste de la delicias de la cocina peruana</p>
+						<a href="javascript:void(0)"></a>
+					</figcaption>
+				</figure>
+			</div>
+			<div class="platillos-carta">
+				<a href="http://xn--elpeon-zwa.net/menu.html" class="platillos-carta-btn"><span></span>Ver cartilla completa</a>
+			</div>
 		</div>
 	</section>
 
@@ -79,11 +229,77 @@
 	<section id="contactanos" class="contactanos">
 		<div class="contactanos-wrapper">
 			<h2 class="contactanos-title">Contactanos</h2>
+			<div class="contactanos-form">
+				<div class="contactanos-form-fish" id="fish"></div>
+				<div class="contactanos-form-fish" id="fish2"></div>
+				<form action="" id="contactanosForm">
+					<div class="contactanos-form-group" id="name-form">
+						<label for="name">Tu Nombre</label>
+						<input type="text" id="name" name="name" />
+					</div>
+					
+					<div class="contactanos-form-group" id="email-form">
+						<label for="email">Tu Email*</label>
+						<input type="email" id="email" name="email" />
+					</div>
+					
+					<div class="contactanos-form-group" id="message-form">
+						<label for="message">Tu Mensaje</label>
+						<textarea id="message" name="message"></textarea>
+					</div>
+					
+					<input type="submit" value="Enviar mi mensaje!">
+				</form>
+			</div>
 		</div>
 	</section>
 
 	<!-- FOOTER -->
-	<footer id="footer" class="footer"></footer>
+	<footer id="footer" class="footer">
+		<div class="footer-top">
+			<div class="footer-img"></div>
+			<div class="footer-fishes">
+				<div class="footer-fish-20"></div>
+				<div class="footer-fish-21"></div>
+				<div class="footer-fish-22"></div>
+				<div class="footer-fish-23"></div>
+				<div class="footer-fish-24"></div>
+				<div class="footer-capa"></div>
+			</div>	
+		</div>
+		<div class="footer-general">
+			<div class="footer-logo footer-box">
+				<a href="#inicio"><img class="footer-logo-penion"src="assets/img/ellogo.png"alt="logo"></a>
+			</div>		
+			<div class="footer-reservas footer-box">
+				<p class="footer-title">Reservas</p>
+				<div class="footer-direction">
+					<p class="footer-direction">Av. Túpac Amaru # 128</p>
+					<p class="footer-direction">Distrito de Calleria</p>
+					<p class="footer-direction">Pucallpa-Perú</p>
+				</div>
+				<p class="footer-cellphone">061 - 570 008</p>
+			</div>
+			<div class="footer-horarios footer-box">
+				<p class="footer-title">Horarios de atención</p>
+				<p class="footer-day-hour">Lunes : <br><i class="far fa-clock"></i> 10:00 am - 4:30 pm</p>
+				<p class="footer-day-hour">Martes a Domingo : <br><i class="far fa-clock"></i> 10:00 am - 11:00 pm</p>
+				
+			</div>
+			<div class="footer-redesBox footer-box">
+				<p class="footer-title">Redes Sociales</p>
+				<div class="footer-redes">
+					<a href="https://www.facebook.com/Restaurant-Cevicheria-y-Picanteria-El-Pe%C3%B1on-309821075795716/" target="_blank"><i class="fab fa-facebook-f footer-redes-ico"></i></a>
+					<a href="https://twitter.com" target="_blank"><i class="fab fa-instagram footer-redes-ico"></i></a>
+					<a href="https://www.youtube.com/channel/UC5qXHdQpSeEUjcm5GguazFQ" target="_blank"><i class="fab fa-youtube footer-redes-ico"></i></a>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copywrite">
+			<small class="footer-copywrite-content">&copy; <span id="year"></span> All rights reserved - Desarrollado por <a href="https://www.teampixeland.com" class="footer-copywrite-developers" target="_blank"> PixeLand</a></small>
+		</div>
+	</footer>
+
 
 	<!-- MESSENGER SERVICE -->
 	<div class="messenger">
@@ -110,5 +326,8 @@
 	<script src="assets/js/loading.js"></script>
 	<script src="assets/js/code.js"></script>
 	<script src="assets/js/mediaQueries.js"></script>
+	<script src="assets/js/parallax.js"></script>
+	<script src="assets/js/slider.js"></script>	
+	<script src="assets/js/render.js"></script>
 </body>
 </html>

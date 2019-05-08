@@ -6,7 +6,7 @@
 	}
 	&-link {
 		display: inline-block;
-		margin-right: 32px;
+		margin-right: 48px;
 		color: rgba(255, 255, 255, .7);
 		transition: .3s;
 		&:hover {
@@ -19,7 +19,7 @@
 				&:before {
 					content: '\f107';
 					position: absolute;
-					top: -80%;
+					top: -50%;
 					left: 50%;
 					font-family: $font-awesome;
 					font-weight: 600;

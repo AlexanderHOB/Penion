@@ -1,6 +1,203 @@
 // FOOTER
 
 .footer {
-	background-color: $bg-footer;
-	height: 50vh;
+	width: 100%;
+	background-image: $gradient-ocean-1;
+	&-top {
+		position: relative;
+		width: 100%;
+		height: 300px;
+		overflow: hidden;
+		@include mobile($bp-sm){
+			height: 450px;
+		}
+	}
+	&-img {
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		background-image: url('../img/elpenionfooter.png');
+		background-position: center;
+		background-size: cover;
+		background-repeat: repeat-x;
+	}
+	&-fishes {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 40%;
+		z-index: 3;
+
+	}
+	&-capa {
+		position: absolute;
+		bottom: 0;
+		background-image:$gradient-ocean-2;
+		width: 100%;
+		height: 100%;
+		opacity: .7;
+	}
+	&-fish-20,
+	&-fish-21,
+	&-fish-22,
+	&-fish-23,
+	&-fish-24 {
+		position: absolute;
+		width:138px;
+		height: 60px;
+		background-repeat: no-repeat;
+		background-position: center;
+		@include desktop($bp-xs){
+			transform: scale(0.4);
+		}
+	}
+	&-fish-20 {
+		top:60%;
+		left: 95%;
+		background-image:url(../img/recurso20.png);
+		animation: fish20 30s linear infinite;
+	}
+	&-fish-21 { 
+		top:15%;
+		left: 78%;
+		background-image:url(../img/recurso21.png);
+		animation: fish21 30s linear infinite;
+	}
+
+	&-fish-22 { 
+		top:55%;
+		left: 10%;
+		background-image:url(../img/recurso22.png);
+		animation: fish22 30s linear infinite;
+	}
+	&-fish-23 { 
+		top:10%;
+		left: 1%;
+		background-image:url(../img/recurso23.png);
+		animation: fish23 30s linear infinite;
+	}
+	&-fish-24 { 
+		bottom: 0%;
+		left: 60%;
+		background-image:url(../img/recurso24.png);
+		animation: fish24 30s linear infinite;
+	}
+	&-general {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		padding-bottom: 30px;
+		color: $text-light;
+	}
+	&-box {
+		padding: 30px 30px 0;
+	}
+	&-title {
+		font-size: 24px;
+		text-align: center;
+		font-family: $pacifico;
+	}
+	&-logo {
+		align-self: center;
+		&-penion {
+			width: 250px;
+		}
+	}
+	&-reservas {
+
+	}
+	&-cellphone {
+		text-align: center;
+	}
+	&-direction {
+		text-align: center;
+	}
+	&-horarios {
+
+	}
+	&-day-hour {
+		text-align: center;
+	}
+	&-redesBox{
+
+	}
+	&-redes {
+		display: flex;
+		justify-content: center;
+		&-logo {
+			width: 45px;
+			height: 45px;
+			margin: 15px;
+			opacity: 0.7;
+		}
+		&-ico {
+			font-size: 32px;
+			margin: 15px;
+			opacity: .85;
+			transition: .5s;
+			&:hover {
+				opacity: 1;
+				text-shadow: 0 0 5px rgba(255, 255, 255, .5);
+			}
+		}
+	}
+	&-copywrite {
+		padding-right: 15px;
+		padding-left: 15px;
+		text-align: center;
+		color: $text-light;
+		&-content {
+			font-size: 16px;
+		}
+		&-developers {
+			color: $light-blue;
+		}
+	}
+}
+
+@keyframes fish20 {
+	100%{
+		transform: translate(-300px);
+		opacity: 0;
+	}
+	95%{
+		opacity: 1;
+	}
+}
+@keyframes fish21 {
+	100%{
+		transform: translate(-300px);
+		opacity: 0;
+	}
+	95%{
+		opacity: 1;
+	}
+}
+@keyframes fish22 {
+	100%{
+		transform: translate(300px);
+		opacity: 0;
+	}
+	95%{
+		opacity: 1;
+	}
+}
+@keyframes fish23 {
+	100%{
+		transform: translate(300px);
+		opacity: 0;
+	}
+	95%{
+		opacity: 1;
+	}
+}
+@keyframes fish24 {
+	100%{
+		transform: translate(-300px);
+		opacity: 0;
+	}
+	95%{
+		opacity: 1;
+	}
 }

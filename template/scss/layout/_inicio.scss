@@ -1,14 +1,365 @@
 // INICIO 
 
-.inicio {
-	height: 100vh;
-	@extend %sec-p;
-	background-color: $bg-inicio;
-	&-wrapper {
-		@extend %container;
+// Welcome
+.welcome {
+	position: relative;
+	z-index: 70;
+	height: 320px;
+	@include mobile($bp-xs-2) {
+		height: 350px;
+	}
+	@include mobile($bp-xs-3) {
+		height: 380px;
+	}
+	@include mobile($bp-xs-4) {
+		height: 450px;
+	}
+	@include mobile($bp-xs) {
+		height: 500px;
+	}
+	@include mobile(660px) {
+		height: 550px;
+	}
+	@include mobile($bp-sm) {
+		height: 600px;
+	}
+	@include mobile($bp-sm-3) {
+		height: 650px;
+	}
+	@include mobile($bp-md) {
+		height: 680px;
+	}
+	@include mobile($bp-md-1) {
+		height: 720px;
+	}
+	@include mobile(1080px) {
+		height: calc(100vh + 100px);
+	}
+	@include mobile($bp-lg) {
+		height: calc(100vh + 150px);
+	}
+	@include mobile($bp-md-2) {
+		height: calc(100vh + 220px);
+	}
+
+	// Background
+	&-background {
+		position: absolute;
+		z-index: 71;
+		width: 100%;
+		height: 100%;
+		background-image: radial-gradient($green 50%, darken($green-dark, 10%) 100%);
+		animation: animateBackground 20s linear infinite;
+	}
+
+	// Wave
+	&-wave {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 74;
+		width: 100%;
+	}
+
+	// Parallax
+	&-parallax {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		z-index: 73;
+		overflow: hidden;
 	}
 	&-title {
+		z-index: 74;
 		@extend %title-1;
+		padding-top: 70px;
+		text-shadow: 3px 3px $dark;
 		color: $text-light;
+		@include mobile(930px) {
+			padding-top: 60px;
+		}
+		@include mobile($bp-lg) {
+			padding-top: 50px;
+		}
+	}
+	&-platos {
+		height: 100%;
+	}
+	&-plato {
+		width: 100%;
+		@include desktop(930px) {
+			padding-top: 100px;
+		}
+		@include range(930px, $bp-lg) {
+			padding-top: 70px;
+		}
+	}
+
+	// Globo
+	&-globo {
+		position: absolute;
+		z-index: 74;
+		width: 30%;
+		right: 5%;
+		top: 40%;
+		animation: animateGlobo 2s linear infinite;
+		transform: rotate(0deg) translateX(10px) rotate(0deg);
+		@include mobile(360px) {
+			top: 35%;
+		}
+		@include mobile($bp-xs-3) {
+			top: 30%;
+		}
+		@include mobile($bp-xs) {
+			top: 25%;
+		}
+		@include mobile($bp-sm) {
+			top: 20%;
+		}
+		@include mobile($bp-md) {
+			top: 15%;
+		}
+		@include mobile($bp-lg) {
+			width: 25%;
+		}
+	}
+}
+
+@keyframes animateBackground {
+	50%{
+		filter: hue-rotate(180deg);
+	}
+}
+
+@keyframes animateGlobo {
+	to { 
+		transform: rotate(-360deg) translateX(10px) rotate(360deg); 
+	}
+}
+
+// Mejores
+.mejores {
+	&-title {
+		padding-top: 40px;
+		padding-bottom: 30px;
+		text-align: center;
+		@extend %title-2;
+		color: $text-title-2;
+		@include mobile($bp-xs) {
+			padding-top: 50px;
+			padding-bottom: 40px;
+		}
+		@include mobile($bp-sm) {
+			padding-top: 70px;
+			padding-bottom: 60px;
+		}
+		@include mobile($bp-md) {
+			padding-top: 80px;
+			padding-bottom: 70px;
+		}    
+	}
+}
+
+// Slider
+.slider {
+	position: relative;
+	z-index: 70;
+	&-inner {
+		position: relative;
+		width: 100%;
+		height: 610px;
+		overflow: hidden;
+		@include mobile($bp-xs){
+			height: 570px;
+		}
+		@include mobile($bp-sm){
+			height: 550px;
+		}
+		@include mobile($bp-md){
+			height: 520px;
+		}
+		@include mobile($bp-lg){
+			height: 500px;
+		}
+	}
+	&-item {
+		position: relative;
+		z-index: 72;
+		display: none;
+		width: 100%;
+		height: 100%;
+		backface-visibility: hidden;
+		perspective: 1000px;
+	}
+	&-content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 60%;
+		height: 100%;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+	}
+	&-img {
+		width: 280px;
+		height: 151px;
+		margin-top: -130px;
+		margin-bottom: 40px;
+		@include mobile($bp-xs-3) {
+			width: 372px;
+			height: 200px;
+		}
+	}
+	&-title {
+		padding-bottom: 4px;
+		@extend %title-3;
+		color: $text-title-3;
+	}
+	&-text {
+		@extend %text-1;
+	}
+	&-item#{&}-active,
+	&-item-next,
+	&-item-prev {
+		display: block;
+		transition: transform .6s ease;
+	}
+	&-item-next,
+	&-item-prev {
+		position: absolute;
+		top: 0;
+	}
+	&-item-next#{&}-item-left,
+	&-item-prev#{&}-item-right {
+		transform: translate3d(0, 0, 0);
+	}
+	&-item-prev,
+	&-active#{&}-item-left {
+		transform: translate3d(-100%, 0, 0);
+	}
+	&-item-next,
+	&-active#{&}-item-right {
+		transform: translate3d(100%, 0, 0);
+	}
+
+	// Arrows
+	&-prev,
+	&-next {
+		position: absolute;
+		z-index: 73;
+		top: 0;
+		bottom: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 10%;
+		text-decoration: none;
+		&-icon {
+			display: block;
+			color: $blue;
+			font-size: 3em;
+			opacity: .8;
+			transition: .5s;
+		}
+		&:hover &-icon {
+			opacity: 1;
+		}
+	}
+	&-prev {
+		left: 0;
+	}
+	&-next {
+		right: 0;
+	}
+
+	// Wave
+	&-wave {
+		position: absolute;
+		z-index: 71;
+		width: 100%;
+		height: 143px;
+		bottom: 0;
+		left: 0;
+		background-image: url(../img/wave2.png);
+		animation: animateWave 10s linear infinite;
+		&:before,
+		&:after {
+			content: '';
+			width: 100%;
+			height: 143px;
+			background-image:  url(../img/wave2.png);
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		&:before{
+			opacity: .4;
+			animation: animateWaveReverse 10s linear infinite;
+		}
+		&:after{
+			opacity: .6;
+			animation-delay: -5s;
+			animation: animateWave 20s linear infinite;
+		}
+	}
+}
+
+@keyframes animateWave{
+	0%{
+		background-position: 0;
+	}
+	100%{
+		background-position: 1360px
+	}
+}
+@keyframes animateWaveReverse{
+	0%{
+		background-position: 1360px;
+	}
+	100%{
+		background-position: 0;
+	}
+}
+
+// Slider controllers
+.controller {
+	position: absolute;
+	bottom: 5%;
+	z-index: 73;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	&-bar {
+		display: block;
+		width: 15%;
+		padding: 10px 5px;
+		margin-right: 5px;
+		margin-left: 5px;
+		text-decoration: none;
+		@include mobile($bp-xs-3) {
+			width: 12.5%;
+		}
+		@include mobile($bp-xs) {
+			width: 10%;
+		}
+		@include mobile($bp-sm) {
+			width: 7.5%;
+		}
+		@include mobile($bp-md) {
+			width: 5%;
+		}
+	}
+	&-icon {
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: $light;
+		opacity: .5;
+		transition: .6s;
+	}
+	&-active &-icon {
+		opacity: 1;
 	}
 }

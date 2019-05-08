@@ -24,16 +24,22 @@
 	}
 }
 
+%tap {
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
 // secciones
 %sec-p {
-	padding-top: 70px;
+	padding-top: 80px;
 }
 %title {
 	text-align: center;
-	font-weight: 500;
 }
 %title-1 {
 	@extend %title;
+	font-family: $kalam;
+	font-weight: 700;
 	font-size: 2.5em;
 	@include mobile($bp-xs){
 		font-size: 3em;
@@ -51,6 +57,9 @@
 %title-2 {
 	@extend %title;
 	font-size: 2em;
+	font-weight: 500;
+	font-family: $pacifico;
+	padding-bottom: 50px;
 	@include mobile($bp-xs){
 		font-size: 2.5em;
 	}
@@ -60,7 +69,63 @@
 	@include mobile($bp-md){
 		font-size: 3.5em;
 	}
-	@include mobile($bp-lg){
-		font-size: 4em;
+}
+
+
+// Titles 
+%title-3 {
+	font-weight: 500;
+	font-size: 1.8em;
+	font-family: $pacifico;
+	@include mobile($bp-xs){
+		font-size: 2em;
 	}
+	@include mobile($bp-sm){
+		font-size: 2.2em;
+	}
+}
+%title-4 {
+	font-weight: 500;
+	font-size: 1.6em;
+	font-family: $pacifico;
+	@include mobile($bp-sm){
+		font-size: 2em;
+	}
+}
+// Text
+%text-1 {
+	font-size: 1em;
+	@include mobile($bp-xs){
+		font-size: 1.1em;
+	}
+	@include mobile($bp-sm){
+		font-size: 1.2em;
+	}
+}
+
+// Contactanos
+%input-contactanos{
+	width: 250px;
+	border:none;
+	border-radius: 20px;
+	outline: none;
+	padding: 10px;
+	color: $dark;
+	transition: border .5s;
+	font-size: 16px;
+	border: 3px solid $blue-light;
+	@include mobile($bp-xs){
+		width: 500px;
+	}
+	&:focus{
+		border: 3px solid $blue;	
+	}
+}
+%group-image{
+	width: 566px;
+	padding-top:2px;
+	transition: background-image .7s;
+	background-position: right bottom;
+	background-size: 10.5%;
+	background-repeat: no-repeat;
 }

@@ -1,14 +1,94 @@
 // CONTACTANOS
-
 .contactanos {
-	height: 100vh;
+	position: relative;
+	padding-bottom: 80px;
+	overflow: hidden;
 	@extend %sec-p;
-	background-color: $bg-contactanos;
-	&-wrapper{
+	&-wrapper {
 		@extend %container;
 	}
 	&-title {
 		@extend %title-2;
-		color: $text-light;
+		padding-bottom: 20px;
+		color: $text-title-2;
 	}
+	&-form {
+		&-fish {
+			position: absolute;	
+			width: 235px;
+			height: 104px;
+			margin-left: -235px;
+			background-image:url(../img/platillos/fish.png);
+			animation: myfirst 24s linear infinite;
+		}
+		&-group {
+			@extend %group-image;
+			&-active {
+				@extend %group-image;
+				background-image: url(../img/platillos/octo.png);
+			}
+			&-error {
+				@extend %group-image;
+				color:$red;
+				background-image: url(../img/platillos/octo-error.png);
+			}
+		}
+		& form {
+			position: relative;
+			margin-left: auto;
+			margin-right: auto;
+			width: 290px;
+			@include mobile($bp-xs){
+				width: 500px;
+			}
+			& label, & input, & textarea {
+				display: block;
+			}
+			& label {
+				margin-top: 20px;
+				padding-left: 20px;
+				font-size: 1.5em;
+				font-family: $pacifico;
+				color: $blue-dark;
+			}
+			& input {
+				@extend %input-contactanos;
+				&[type="submit"] {
+					height: 80px;
+					margin-top: 50px;
+					font-size: 1.29em;
+					color: $text-light;
+					cursor: pointer;
+					background-color:$blue-dark;
+					transition: background-color .5s;
+					&:hover{
+						background-color: $orange;					
+					}
+				}
+			}
+			& textarea {
+				@extend %input-contactanos;
+				height: 100px;	
+				resize: none; 
+			}
+		}
+	} 
+}
+
+#fish{
+	top: 140px;
+}
+
+#fish2{
+	top: 260px;
+	left:-1px;
+	animation-delay: 2s;
+}
+
+/* Animation */
+@keyframes myfirst
+{
+	0% {margin-left: -5%}
+	70% {margin-left: 100%;}
+	100% {margin-left: 100%;}
 }

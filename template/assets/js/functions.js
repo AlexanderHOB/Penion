@@ -41,6 +41,50 @@ function scrollSpy(){
 	}
 }
 
+//Service
+validateForm($formName,$groupName);
+validateForm($formEmail,$groupEmail);
+validateForm($formMessage,$groupMessage);
+validateForm($formError);
+//valida formulario en los eventos focus-blur-submit
+function validateForm(form,group){
+	form.addEventListener('focus',()=>{
+		group.classList.add('contactanos-form-group-active');
+		group.classList.remove('contactanos-form-group');
+	});
+	form.addEventListener('blur',()=>{
+		group.classList.remove('contactanos-form-group-active');
+		group.classList.add('contactanos-form-group');
+	});
+	form.addEventListener('submit',validar,false);
+}
+//añade una clase para mostrar imagen
+function focusForm(group){
+	group.classList.add('contactanos-form-group-active');
+	group.classList.remove('contactanos-form-group');
+}
+//recibe en que parte del formulario se dio el error
+function errorField(field){
+	field.classList.add('contactanos-form-group-error');
+	setTimeout(function(){
+		field.classList.remove('contactanos-form-group-error');
+	},2000);
+}
+//valida que los campos esten llenos
+function validar(e){
+	var stopsubmit=false;
+	if($formName.value==""){
+		errorField($groupName);
+		stopsubmit=true;
+		e.preventDefault();	
+	}
+	if($formEmail.value==""){
+		errorField($groupEmail);
+		stopsubmit=true;
+		e.preventDefault();	
+	}
+}
+
 // Messenger Service
 function chatNone(){
 	$messengerChat.style.display = 'none';

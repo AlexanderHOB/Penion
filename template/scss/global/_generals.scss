@@ -7,7 +7,7 @@
 	scroll-behavior: smooth;
 }
 body {
-	font-family: $roboto, $sans-serif;
+	font-family: $poppins;
 	color: $text-dark;
 
 	// Scroll
@@ -38,6 +38,5 @@ img {
 button,
 a {
 	cursor: pointer;
-	user-select: none;
-	-webkit-tap-highlight-color: transparent;
+	@extend %tap;
 }
