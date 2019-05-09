@@ -16,7 +16,7 @@
 	&-img {
 		width: 200px;
 		height: 200px;
-		background-image: url(../img/quienes-somos.jpg);
+		background-image: url(../img/nosotros/quienes-somos.jpg);
 		background-size: cover;
 		background-position: center;
 		border-radius: 50%;
@@ -75,6 +75,9 @@
 		@extend %title-3;
 		transition: .3s;
 		transform: translate(-50%, -50%);
+		@include desktop($bp-xs) {
+			font-size: 24px;
+		}
 	}
 	&-content {
 		display: flex;
@@ -110,7 +113,7 @@
 // Visión
 .vision {
 	z-index: 61;
-	background-image: url(../img/vision.jpg);
+	background-image: url(../img/nosotros/vision.jpg);
 	background-position: center;
 	background-size: cover;
 	&-title {
@@ -133,7 +136,7 @@
 .mision {
 	transition: .5s;
 	z-index: 62;
-	background-image: url(../img/mision.jpg);
+	background-image: url(../img/nosotros/mision.jpg);
 	background-position: center;
 	background-size: cover;
 	-webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);

@@ -1,7 +1,6 @@
 // CONTACTANOS
 .contactanos {
 	position: relative;
-	padding-bottom: 80px;
 	overflow: hidden;
 	@extend %sec-p;
 	&-wrapper {
@@ -14,33 +13,38 @@
 	}
 	&-form {
 		&-fish {
-			position: absolute;	
+			position: absolute;
 			width: 235px;
 			height: 104px;
-			margin-left: -235px;
 			background-image:url(../img/platillos/fish.png);
-			animation: myfirst 24s linear infinite;
+			animation: myfirst 16s linear infinite;
 		}
 		&-group {
-			@extend %group-image;
+			@extend %group;
 			&-active {
-				@extend %group-image;
+				@extend %group;
 				background-image: url(../img/platillos/octo.png);
 			}
 			&-error {
-				@extend %group-image;
-				color:$red;
+				@extend %group;
+				color: $red;
 				background-image: url(../img/platillos/octo-error.png);
+			}
+			@include desktop($bp-sm){
+				&-active {
+					background-image: none;
+				}
+				&-error {
+					background-image: none;
+				}
 			}
 		}
 		& form {
 			position: relative;
 			margin-left: auto;
 			margin-right: auto;
-			width: 290px;
-			@include mobile($bp-xs){
-				width: 500px;
-			}
+			width: 100%;
+			max-width: 500px;
 			& label, & input, & textarea {
 				display: block;
 			}
@@ -61,7 +65,7 @@
 					cursor: pointer;
 					background-color:$blue-dark;
 					transition: background-color .5s;
-					&:hover{
+					&:hover {
 						background-color: $orange;					
 					}
 				}
@@ -69,26 +73,45 @@
 			& textarea {
 				@extend %input-contactanos;
 				height: 100px;	
-				resize: none; 
+				resize: none;
+					// Scroll
+					&::-webkit-scrollbar {
+						width: 10px;
+						height: 10px;
+					}
+					&::-webkit-scrollbar-track {
+						background-color: transparent;
+					}
+					&::-webkit-scrollbar-thumb {
+						border-radius: 8px;
+						background-color: rgba(0, 0, 0, .5);
+					}
+				}
 			}
-		}
-	} 
-}
+		} 
+	}
 
-#fish{
-	top: 140px;
-}
+	#fish {
+		top: 10%;
+		left: 0;
+	}
 
-#fish2{
-	top: 260px;
-	left:-1px;
-	animation-delay: 2s;
-}
+	#fish2 {
+		top: 30%;
+		left: 0;
+		animation-delay: 2s;
+	}
 
-/* Animation */
-@keyframes myfirst
-{
-	0% {margin-left: -5%}
-	70% {margin-left: 100%;}
-	100% {margin-left: 100%;}
-}
+	#fish3 {
+		bottom: 20%;
+		left: 0;
+		animation-delay: 1s;
+	}
+
+	/* Animation */
+	@keyframes myfirst
+	{
+		0% {margin-left: -20%}
+		80% {margin-left: 100%;}
+		100% {margin-left: 100%;}
+	}

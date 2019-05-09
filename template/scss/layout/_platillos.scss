@@ -2,7 +2,7 @@
 
 .platillos {
 	@extend %sec-p;
-	overflow: hidden;
+	// overflow: hidden;
 	&-wrapper {
 		@extend %container;
 	}
@@ -93,6 +93,9 @@
 					text-shadow: 1px 1px 0 $dark;
 					transition: all .35s;
 					opacity: 0;
+					@include desktop($bp-xs-4) {
+						display: none;
+					}
 				}
 				& a {
 					position: absolute;

@@ -1,5 +1,19 @@
 //FUNCIONES
 
+// Loading
+function loadingOnResize(){
+	$loading.style.opacity = '1';
+	$loading.style.display = 'flex';
+	NProgress.start();
+	setTimeout(()=>{
+		$loading.style.opacity = '0';
+		NProgress.done();
+		setTimeout(()=>{
+			$loading.style.display = 'none';
+		}, 1000);
+	}, 1000);
+}
+
 // nav toggle
 function navToggle(){
 	// Button animation

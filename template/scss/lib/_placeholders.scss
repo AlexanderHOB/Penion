@@ -104,9 +104,8 @@
 }
 
 // Contactanos
-%input-contactanos{
-	width: 250px;
-	border:none;
+%input-contactanos {
+	width: calc(100% - 56px);
 	border-radius: 20px;
 	outline: none;
 	padding: 10px;
@@ -114,18 +113,17 @@
 	transition: border .5s;
 	font-size: 16px;
 	border: 3px solid $blue-light;
-	@include mobile($bp-xs){
-		width: 500px;
-	}
 	&:focus{
 		border: 3px solid $blue;	
 	}
+	@include desktop($bp-sm){
+		width: 100%;
+	}
 }
-%group-image{
-	width: 566px;
-	padding-top:2px;
+%group {
+	width: 100%;
 	transition: background-image .7s;
 	background-position: right bottom;
-	background-size: 10.5%;
+	background-size: 50px;
 	background-repeat: no-repeat;
 }

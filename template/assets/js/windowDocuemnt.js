@@ -7,6 +7,7 @@ window.addEventListener('load', function() {
 	setTimeout(()=>{
 		$loading.style.display = 'none';
 	}, 1000);
+	loadingMarker++;
 	NProgress.done();
 
 	// Nav slide down

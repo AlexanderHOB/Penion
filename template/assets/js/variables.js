@@ -5,6 +5,7 @@ const $body = document.body;
 
 // Loading
 const $loading = document.querySelector('.loading');
+var loadingMarker = 0;
 
 //Nav
 const $header = document.querySelector('.header'),

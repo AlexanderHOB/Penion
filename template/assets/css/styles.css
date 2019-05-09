@@ -200,7 +200,7 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-.nosotros, .platillos, .contactanos {
+.nosotros, .platillos, .contactanos, .footer {
   padding-top: 80px;
 }
 
@@ -310,8 +310,7 @@ a {
 }
 
 .contactanos-form form input, .contactanos-form form textarea {
-  width: 250px;
-  border: none;
+  width: calc(100% - 56px);
   border-radius: 20px;
   outline: none;
   padding: 10px;
@@ -323,24 +322,23 @@ a {
   border: 3px solid #bbdefb;
 }
 
-@media only screen and (min-width: 576px) {
-  .contactanos-form form input, .contactanos-form form textarea {
-    width: 500px;
-  }
-}
-
 .contactanos-form form input:focus, .contactanos-form form textarea:focus {
   border: 3px solid #2196F3;
 }
 
+@media only screen and (max-width: 767px) {
+  .contactanos-form form input, .contactanos-form form textarea {
+    width: 100%;
+  }
+}
+
 .contactanos-form-group, .contactanos-form-group-active, .contactanos-form-group-error {
-  width: 566px;
-  padding-top: 2px;
+  width: 100%;
   -webkit-transition: background-image .7s;
   -o-transition: background-image .7s;
   transition: background-image .7s;
   background-position: right bottom;
-  background-size: 10.5%;
+  background-size: 50px;
   background-repeat: no-repeat;
 }
 
@@ -1276,7 +1274,7 @@ a {
   height: 143px;
   bottom: 0;
   left: 0;
-  background-image: url(../img/wave2.png);
+  background-image: url("../img/inicio/wave2.png");
   -webkit-animation: animateWave 10s linear infinite;
   animation: animateWave 10s linear infinite;
 }
@@ -1285,7 +1283,7 @@ a {
   content: '';
   width: 100%;
   height: 143px;
-  background-image: url(../img/wave2.png);
+  background-image: url("../img/inicio/wave2.png");
   position: absolute;
   top: 0;
   left: 0;
@@ -1409,7 +1407,7 @@ a {
 .quienesSomos-img {
   width: 200px;
   height: 200px;
-  background-image: url(../img/quienes-somos.jpg);
+  background-image: url(../img/nosotros/quienes-somos.jpg);
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -1487,6 +1485,12 @@ a {
   transform: translate(-50%, -50%);
 }
 
+@media only screen and (max-width: 575px) {
+  .mvBox-title {
+    font-size: 24px;
+  }
+}
+
 .mvBox-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1526,7 +1530,7 @@ a {
 
 .vision {
   z-index: 61;
-  background-image: url(../img/vision.jpg);
+  background-image: url(../img/nosotros/vision.jpg);
   background-position: center;
   background-size: cover;
 }
@@ -1560,7 +1564,7 @@ a {
   -o-transition: .5s;
   transition: .5s;
   z-index: 62;
-  background-image: url(../img/mision.jpg);
+  background-image: url(../img/nosotros/mision.jpg);
   background-position: center;
   background-size: cover;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0% 100%);
@@ -1599,10 +1603,6 @@ a {
 .vision:hover + .mision {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-}
-
-.platillos {
-  overflow: hidden;
 }
 
 .platillos-title {
@@ -1736,6 +1736,12 @@ a {
   opacity: 0;
 }
 
+@media only screen and (max-width: 479px) {
+  .platillos-platillos figure figcaption p {
+    display: none;
+  }
+}
+
 .platillos-platillos figure figcaption a {
   position: absolute;
   left: 0;
@@ -1846,7 +1852,6 @@ a {
 
 .contactanos {
   position: relative;
-  padding-bottom: 80px;
   overflow: hidden;
 }
 
@@ -1859,10 +1864,9 @@ a {
   position: absolute;
   width: 235px;
   height: 104px;
-  margin-left: -235px;
   background-image: url(../img/platillos/fish.png);
-  -webkit-animation: myfirst 24s linear infinite;
-  animation: myfirst 24s linear infinite;
+  -webkit-animation: myfirst 16s linear infinite;
+  animation: myfirst 16s linear infinite;
 }
 
 .contactanos-form-group-active {
@@ -1874,17 +1878,21 @@ a {
   background-image: url(../img/platillos/octo-error.png);
 }
 
+@media only screen and (max-width: 767px) {
+  .contactanos-form-group-active {
+    background-image: none;
+  }
+  .contactanos-form-group-error {
+    background-image: none;
+  }
+}
+
 .contactanos-form form {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  width: 290px;
-}
-
-@media only screen and (min-width: 576px) {
-  .contactanos-form form {
-    width: 500px;
-  }
+  width: 100%;
+  max-width: 500px;
 }
 
 .contactanos-form form label, .contactanos-form form input, .contactanos-form form textarea {
@@ -1920,23 +1928,45 @@ a {
   resize: none;
 }
 
+.contactanos-form form textarea::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.contactanos-form form textarea::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.contactanos-form form textarea::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 #fish {
-  top: 140px;
+  top: 10%;
+  left: 0;
 }
 
 #fish2 {
-  top: 260px;
-  left: -1px;
+  top: 30%;
+  left: 0;
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
+}
+
+#fish3 {
+  bottom: 20%;
+  left: 0;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 /* Animation */
 @-webkit-keyframes myfirst {
   0% {
-    margin-left: -5%;
+    margin-left: -20%;
   }
-  70% {
+  80% {
     margin-left: 100%;
   }
   100% {
@@ -1945,9 +1975,9 @@ a {
 }
 @keyframes myfirst {
   0% {
-    margin-left: -5%;
+    margin-left: -20%;
   }
-  70% {
+  80% {
     margin-left: 100%;
   }
   100% {
@@ -1980,7 +2010,7 @@ a {
   z-index: 2;
   width: 100%;
   height: 100%;
-  background-image: url("../img/elpenionfooter.png");
+  background-image: url("../img/footer/elpenionfooter.png");
   background-position: center;
   background-size: cover;
   background-repeat: repeat-x;
@@ -2025,7 +2055,7 @@ a {
 .footer-fish-20 {
   top: 60%;
   left: 95%;
-  background-image: url(../img/recurso20.png);
+  background-image: url(../img/footer/recurso20.png);
   -webkit-animation: fish20 30s linear infinite;
   animation: fish20 30s linear infinite;
 }
@@ -2033,7 +2063,7 @@ a {
 .footer-fish-21 {
   top: 15%;
   left: 78%;
-  background-image: url(../img/recurso21.png);
+  background-image: url(../img/footer/recurso21.png);
   -webkit-animation: fish21 30s linear infinite;
   animation: fish21 30s linear infinite;
 }
@@ -2041,7 +2071,7 @@ a {
 .footer-fish-22 {
   top: 55%;
   left: 10%;
-  background-image: url(../img/recurso22.png);
+  background-image: url(../img/footer/recurso22.png);
   -webkit-animation: fish22 30s linear infinite;
   animation: fish22 30s linear infinite;
 }
@@ -2049,7 +2079,7 @@ a {
 .footer-fish-23 {
   top: 10%;
   left: 1%;
-  background-image: url(../img/recurso23.png);
+  background-image: url(../img/footer/recurso23.png);
   -webkit-animation: fish23 30s linear infinite;
   animation: fish23 30s linear infinite;
 }
@@ -2057,7 +2087,7 @@ a {
 .footer-fish-24 {
   bottom: 0%;
   left: 60%;
-  background-image: url(../img/recurso24.png);
+  background-image: url(../img/footer/recurso24.png);
   -webkit-animation: fish24 30s linear infinite;
   animation: fish24 30s linear infinite;
 }
