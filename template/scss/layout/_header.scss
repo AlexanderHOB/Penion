@@ -37,6 +37,7 @@
 }
 .nav-toggle {
 	display: none;
+	@extend %tap;
 	@include desktop($bp-sm) {
 		position: absolute;
 		z-index: 90;
