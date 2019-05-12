@@ -9,6 +9,8 @@ window.addEventListener('load', function() {
 	}, 1000);
 	loadingMarker++;
 	NProgress.done();
+	// AOS
+	AOS.init();
 
 	// Nav slide down
 	const validationNav = e => {
